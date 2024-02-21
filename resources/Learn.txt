@@ -1,0 +1,74 @@
+{
+//Item Ids
+
+//Info
+//Wooden pickaxe [level x4]
+//Gold pickaxe [level x5]
+//Stone pickaxe [level x5]
+//Iron pickaxe [level x6]
+//Diamond pickaxe [level x6]
+
+//Levelup XP
+//22 levels [max 100xp]
+
+//Wands
+//dmg = damage
+//§aBasic Wand [dmg = 2]
+//§aElder Wand [dmg = 10]
+
+//Broom
+//Nibus 2000
+
+//Attacking through wands throw snowballs -> turn into texture particle
+}
+
+{
+	/*
+	* Testing *
+	$wlevel = $player->getLevel();
+	$stairdown = Block::get(Block::BRICK_STAIRS,1);
+	$stairdown2 = Block::get(Block::BRICK_STAIRS,2);
+	$stairdown3 = Block::get(Block::BRICK_STAIRS,3);
+	$stairdown4 = Block::get(Block::BRICK_STAIRS,4);
+	$stairdown5 = Block::get(Block::BRICK_STAIRS,5);
+	$stairdown6 = Block::get(Block::BRICK_STAIRS,6);
+<<<<<<< Stair-update-pt2
+	$wlevel->setBlock(new Vector3($player->getX() + 1, $player->getY(), $player->getZ()), $stairdown, true, true); //side up, face left
+	$wlevel->setBlock(new Vector3($player->getX() + 2, $player->getY(), $player->getZ()), $stairdown2, true, true); //useless
+	$wlevel->setBlock(new Vector3($player->getX() + 3, $player->getY(), $player->getZ()), $stairdown3, true, true); //useless
+	$wlevel->setBlock(new Vector3($player->getX() + 4, $player->getY(), $player->getZ()), $stairdown4, true, true); //side down, face right
+	$wlevel->setBlock(new Vector3($player->getX() + 5, $player->getY(), $player->getZ()), $stairdown5, true, true); //side down, face left
+	$wlevel->setBlock(new Vector3($player->getX() + 6, $player->getY(), $player->getZ()), $stairdown6, true, true); //useless
+	still testing for //side up, face right
+	*/
+}
+
+{
+    //level up addons
+
+    //breakblock event for pickaxe levelup using random number of blocks broken
+    //4 - 7 levels
+    //on break block effect because of level usage added aswell
+}
+ 
+{	
+        consume
+
+	//hoping this works then i can more
+	//water botter 373
+	//note for consume event
+	//add to crafting gui recipie thingie
+        //$minepotion = Item::get(106, 0, 1);//get item ItemIds
+	//$minepotion->setCustomName("§eMine §aPotion");
+	//$minepotion->setLore("effects"); //set the lore for the ItemIds
+  	//$sender->getInventory()->addItem($minepotion);
+	//uses Potions.php ^ <- already added
+	
+	//consume event
+}
+
+{
+public function setItem(Player $player, $item) { 
+		return $player->getInventory()->addItem($item);
+		}
+}

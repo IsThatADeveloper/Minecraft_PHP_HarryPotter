@@ -1,0 +1,59 @@
+{
+
+namespace harrypottercore\items\utils;
+
+use pocketmine\block\BlockIds;
+use harrypottercore\Main;
+use pocketmine\item\enchantment\Enchantment;
+use pocketmine\item\enchantment\EnchantmentInstance;
+use pocketmine\item\Item;
+use pocketmine\item\Armor;
+use pocketmine\item\Tool;
+use pocketmine\item\ItemFactory;
+use pocketmine\block\BlockFactory;
+
+use pocketmine\event\Listener;
+
+//config
+use pocketmine\utils\config;
+
+class Items extends Listener{
+	
+//if required use
+
+    private $plugin;
+	
+    public $config;
+
+    public function __construct(Main $plugin) {
+        $this->plugin = $plugin;
+    }
+	
+    public function getPlugin(){
+	return $this->plugin;
+    }
+    
+    public function storeVar(): void {
+	    $this->config = new Config($this->plugin->getDataFolder() . "/items.yml", Config::YAML);
+    }
+	
+    public function saveConfig(): void { 
+              if(!file_exists($this->plugin->getDataFolder() . "/items.yml")) {
+		 $config = new Config($this->plugin->getDataFolder() . "/items.yml", Config::YAML);
+            	 $array = [
+      	    		$config->setNested("items", 1),
+      	    	 ];
+      	    	 $config->save();
+	      }
+    }
+	
+    public function getItems(): bool { 
+        foreach ($this->config->getAll() as $name => $item) {
+                return $item;
+		}
+    }
+	
+    public function getItem(Player $player) {
+        return $this->config["hp"]["Items"];
+    }
+}
